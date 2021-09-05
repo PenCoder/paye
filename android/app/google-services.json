@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "182397632569",
+    "project_id": "paye-app",
+    "storage_bucket": "paye-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182397632569:android:180184778e6a958ce98de8",
+        "android_client_info": {
+          "package_name": "com.paye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182397632569-uad2hmkb5resb8uosha1vn3fn1d2ink6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWNR9U8Fw4dsY51zt8AepAkCsa80S3GgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182397632569-uad2hmkb5resb8uosha1vn3fn1d2ink6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "182397632569-7762fd7otl1l637ood7prl4akrddvu2q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.paye"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

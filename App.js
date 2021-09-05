@@ -1,0 +1,73 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
+// GESTURE HANDLER 
+import 'react-native-gesture-handler';
+
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+
+// Screens 
+import {
+    SignUp,
+    Home,
+    Scan,
+    Categories,
+    Payment,
+    SignIn,
+    AccountForm,
+    Account,
+    Transactions
+} from './src/screens';
+import HomeTabs from './src/navigation/hometabs';
+import HomeDrawer from './src/navigation/homedrawer';
+
+// Custom Theme 
+const theme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        border: "transparent"
+    }
+}
+
+// Stack Object 
+const Stack = createStackNavigator();
+
+
+const App = () => {
+    return (
+        <NavigationContainer theme={theme}>
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}
+            >
+                {/* To Sign In Screen */}
+                <Stack.Screen name="SignIn" component={SignIn} />
+                {/* To Sign Up Screen */}
+                <Stack.Screen name="SignUp" component={SignUp} />
+                {/* To Home Screen */}
+                <Stack.Screen name="Main" component={HomeDrawer} />
+                {/* To Accessories Screen */}
+                <Stack.Screen name="Categories" component={Categories} />
+                {/* To Payment Screen */}
+                <Stack.Screen name="Payment" component={Payment} />
+                {/* To Account Screen */}
+                <Stack.Screen name="Account" component={Account} />
+                {/* To Account Form Screen */}
+                <Stack.Screen name="AccountForm" component={AccountForm} />
+                {/* To Transactions Screen */}
+                <Stack.Screen name="Transactions" component={Transactions} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
+}
+
+export default App;
