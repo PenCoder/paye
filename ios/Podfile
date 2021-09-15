@@ -12,7 +12,11 @@ target 'paye' do
     :hermes_enabled => false
   )
 
-  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  pod 'RNKeychain', :path => '../node_modules/react-native-keychain'
+
+
+  pod 'TouchID', :path => '../node_modules/react-native-touch-id'
 
   target 'payeTests' do
     inherit! :complete

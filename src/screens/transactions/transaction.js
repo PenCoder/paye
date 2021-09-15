@@ -23,30 +23,33 @@ const accounts = [
 ]
 
 const Transaction = (props, { navigation }) => {
-    const { account } = props;
+    const { transaction } = props;
     // State Hooks
     const [phone, setPhone] = useState('');
 
     function renderHeader() {
         return (
-            <TouchableOpacity
+            <View
                 style={{
                     flexDirection: 'row',
                     alignItems: 'center',
                     marginTop: SIZES.padding * 3,
                     paddingHorizontal: SIZES.padding * 3
                 }}
-            // onPress={() => navigation.goBack()}
             >
-                <Image
-                    source={icons.back}
-                    resizeMode="contain"
-                    style={{
-                        width: 20,
-                        height: 20,
-                        tintColor: COLORS.logo_tint
-                    }}
-                />
+                <TouchableOpacity
+                    onPress={() => navigation.goBack()}
+                >
+                    <Image
+                        source={icons.back}
+                        resizeMode="contain"
+                        style={{
+                            width: 20,
+                            height: 20,
+                            tintColor: COLORS.logo_tint
+                        }}
+                    />
+                </TouchableOpacity>
                 <Text
                     style={{
                         marginLeft: SIZES.padding * 1.5,
@@ -54,9 +57,9 @@ const Transaction = (props, { navigation }) => {
                         ...FONTS.h3
                     }}
                 >
-                    VODAFONE CASH
+                    TRANSACTION DETAILS
                 </Text>
-            </TouchableOpacity>
+            </View>
         )
     }
     function renderDetails() {
@@ -70,7 +73,7 @@ const Transaction = (props, { navigation }) => {
 
                     <View>
                         <Text style={{ color: COLORS.text_pri, ...FONTS.h1 }}>₵ 1,000</Text>
-                        <Text style={{ color: COLORS.text_sec, ...FONTS.body5 }}>ACCOUNT BALANCE</Text>
+                        <Text style={{ color: COLORS.text_sec, ...FONTS.body5 }}>AMOUNT</Text>
                     </View>
 
                 </View>
@@ -78,8 +81,40 @@ const Transaction = (props, { navigation }) => {
                 <View
                     style={{ margin: SIZES.padding * 2 }}
                 >
-                    <Text style={{ color: COLORS.text_sec, ...FONTS.body4 }}>ACCOUNT DETAILS</Text>
+                    <Text style={{ color: COLORS.text_sec, ...FONTS.body4 }}>DETAILS</Text>
                 </View>
+                <View
+                    style={{
+                        flexDirection: 'row',
+                        alignItems: 'center'
+                    }}
+                >
+                    <View
+                        style={{
+                            backgroundColor: COLORS.bg_gd_top,
+                            borderRadius: 30,
+                            width: 50,
+                            height: 50,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            margin: SIZES.padding * 2
+                        }}
+                    >
+                        <Image
+                            source={icons.wallet}
+                            style={{
+                                height: '40%',
+                                width: '40%',
+                                tintColor: COLORS.logo_tint
+                            }}
+                        />
+                    </View>
+                    <View>
+                        <Text style={{ color: COLORS.text_pri, ...FONTS.h4 }}>0206644084</Text>
+                        <Text style={{ color: COLORS.text_sec, ...FONTS.body5 }}>SENT TO</Text>
+                    </View>
+                </View>
+
                 <View
                     style={{
                         flexDirection: 'row',
@@ -130,7 +165,7 @@ const Transaction = (props, { navigation }) => {
                         }}
                     >
                         <Image
-                            source={icons.wallet}
+                            source={icons.clock}
                             style={{
                                 height: '40%',
                                 width: '40%',
@@ -139,65 +174,15 @@ const Transaction = (props, { navigation }) => {
                         />
                     </View>
                     <View>
-                        <Text style={{ color: COLORS.text_pri, ...FONTS.h4 }}>0206644084</Text>
-                        <Text style={{ color: COLORS.text_sec, ...FONTS.body5 }}>ACCOUNT NUMBER</Text>
+                        <Text style={{ color: COLORS.text_pri, ...FONTS.h4 }}>2021-08-21 09:08:20</Text>
+                        <Text style={{ color: COLORS.text_sec, ...FONTS.body5 }}>TIME</Text>
                     </View>
                 </View>
 
             </View>
         )
     }
-    function renderHistory() {
-        return (
-            <View>
-                <View
-                    style={{ margin: SIZES.padding * 2 }}
-                >
-                    <Text style={{ color: COLORS.text_sec, ...FONTS.body4 }}>TRANSACTIONS</Text>
-                </View>
 
-                {[1, 2].map((item, index) =>
-                    <TouchableOpacity
-                        key={index}
-                        style={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            borderWidth: 0.3,
-                            borderRadius: 10,
-                            borderColor: COLORS.border_color,
-                            margin: SIZES.padding * 0.5,
-                        }}
-                    >
-                        <View
-                            style={{
-                                backgroundColor: COLORS.bg_gd_top,
-                                borderRadius: 30,
-                                width: 50,
-                                height: 50,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                margin: SIZES.padding * 2
-                            }}
-                        >
-                            <Image
-                                source={icons.send}
-                                style={{
-                                    height: '40%',
-                                    width: '40%',
-                                    tintColor: COLORS.logo_tint
-                                }}
-                            />
-                        </View>
-                        <View>
-                            <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>GH₵ 200</Text>
-                            <Text style={{ color: COLORS.text_sec, ...FONTS.body4 }}>2021-08-21 01:12:10</Text>
-                        </View>
-                    </TouchableOpacity>
-
-                )}
-            </View>
-        )
-    }
     function renderListHeader() {
         return (
             <View
@@ -282,7 +267,6 @@ const Transaction = (props, { navigation }) => {
 
                     <Divider />
 
-                    {renderHistory()}
                 </ScrollView>
 
             </LinearGradient>

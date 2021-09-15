@@ -293,7 +293,7 @@ const SignIn = ({ navigation }) => {
         // Validate Inputs 
         let validEmail = validateInput('emailAddress', email);
         let validPassword = validateInput('password', password);
-        navigation.navigate('Main')
+        navigation.navigate('Authenticate')
         return;
         if (validEmail && validPassword) {
             user['email'] = email.trim();

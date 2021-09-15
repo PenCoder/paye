@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
-import { RNCamera } from 'react-native-camera';
+// import { RNCamera } from 'react-native-camera';
 import LinearGradient from 'react-native-linear-gradient';
 import { COLORS, FONTS, icons, images, SIZES } from '../../constants';
 
@@ -60,7 +60,7 @@ const Scan = ({ navigation }) => {
                 style={{ flex: 1 }}
             >
                 {renderHeader()}
-                <RNCamera
+                {/* <RNCamera
                     ref={ref => {
                         camera.current = ref
                     }}
@@ -93,7 +93,7 @@ const Scan = ({ navigation }) => {
                             }}
                         />
                     </View>
-                </RNCamera>
+                </RNCamera> */}
                 <View
                     style={{
                         height: 200,

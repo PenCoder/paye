@@ -23,7 +23,10 @@ import {
     SignIn,
     AccountForm,
     Account,
-    Transactions
+    Accounts,
+    Transaction,
+    Authenticate,
+    PINAuth
 } from './src/screens';
 import HomeTabs from './src/navigation/hometabs';
 import HomeDrawer from './src/navigation/homedrawer';
@@ -51,20 +54,28 @@ const App = () => {
             >
                 {/* To Sign In Screen */}
                 <Stack.Screen name="SignIn" component={SignIn} />
+                {/* To Authentication Screen */}
+                <Stack.Screen name="Authenticate" component={Authenticate} />
                 {/* To Sign Up Screen */}
                 <Stack.Screen name="SignUp" component={SignUp} />
                 {/* To Home Screen */}
                 <Stack.Screen name="Main" component={HomeDrawer} />
+                {/* To Scan Screen */}
+                <Stack.Screen name="Scan" component={Scan} />
                 {/* To Accessories Screen */}
                 <Stack.Screen name="Categories" component={Categories} />
                 {/* To Payment Screen */}
                 <Stack.Screen name="Payment" component={Payment} />
+                {/* To Accounts Screen */}
+                <Stack.Screen name="Accounts" component={Accounts} />
                 {/* To Account Screen */}
                 <Stack.Screen name="Account" component={Account} />
                 {/* To Account Form Screen */}
                 <Stack.Screen name="AccountForm" component={AccountForm} />
                 {/* To Transactions Screen */}
-                <Stack.Screen name="Transactions" component={Transactions} />
+                <Stack.Screen name="Transaction" component={Transaction} />
+                {/* To PIN Code Screen */}
+                <Stack.Screen name="PINAuth" component={PINAuth} />
             </Stack.Navigator>
         </NavigationContainer>
     )

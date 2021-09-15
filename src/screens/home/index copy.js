@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
-import { FlatList, Image, KeyboardAvoidingView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, KeyboardAvoidingView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { COLORS, FONTS, icons, SIZES } from '../../constants';
-import { Button } from '../../components'
 import styles from './styles';
-
-const options = [
-    { title: "SEND MONEY", screen: "Payment" },
-    { title: "PAY BILL", screen: "Payment" },
-    { title: "RECEIVE TOKEN", screen: "Payment" },
-    { title: "SCAN TO PAY", screen: "Scan" },
-    { title: "MY ACCOUNTS", screen: "Accounts" }
-]
 
 const Home = ({ navigation }) => {
 
@@ -25,8 +16,7 @@ const Home = ({ navigation }) => {
                     flexDirection: 'row',
                     alignItems: 'center',
                     marginTop: SIZES.padding * 3,
-                    paddingHorizontal: SIZES.padding * 3,
-                    marginBottom: SIZES.padding * 6
+                    paddingHorizontal: SIZES.padding * 3
                 }}
                 onPress={() => navigation.openDrawer()}
             >
@@ -124,25 +114,12 @@ const Home = ({ navigation }) => {
                 colors={[COLORS.bg_gd_top, COLORS.bg_gd_down]}
                 style={{ flex: 1 }}
             >
-                <FlatList
-                    data={options}
-                    keyExtractor={(item) => item.title}
-                    renderItem={({ item, index }) => {
-                        let value = index + 1;
-                        return (
-                            <Button
-                                key={index}
-                                title={`(${value}) ${item.title}`}
-                                onPress={() => navigation.navigate(item.screen)}
-                            />
-                        )
-                    }}
-                    ListHeaderComponent={renderHeader()}
-                    style={{
-                        marginTop: SIZES.padding
-                    }}
-                />
-
+                <ScrollView keyboardShouldPersistTaps="handled">
+                    {renderHeader()}
+                    {renderRings()}
+                    {renderCodeInput()}
+                    {renderGoButton()}
+                </ScrollView>
             </LinearGradient>
         </KeyboardAvoidingView>
     )

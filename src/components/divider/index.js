@@ -7,11 +7,12 @@ const Divider: React.FC<dividerProps> = (props) => {
     return (
         <View
             style={{
-                width: '85%',
+                width: '90%',
                 alignSelf: 'center',
                 borderBottomWidth: 0.5,
                 borderBottomColor: COLORS.border_color,
                 marginVertical: SIZES.padding * 2,
+                marginHorizontal: SIZES.padding * 4
             }}
         >
         </View>

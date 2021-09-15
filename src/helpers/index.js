@@ -1,4 +1,4 @@
-import { firebase } from "../firebase-config";
+// import { firebase } from "../firebase-config";
 
 // Validation of Form Inputs
 const validateInput = (prop: String, value: String, value2 = '') => {

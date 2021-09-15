@@ -9,7 +9,6 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native';
-import HomeTabs from './hometabs';
 
 const Drawer = createDrawerNavigator();
 
@@ -52,8 +51,8 @@ const HomeDrawer = () => {
             }}
         >
             <Drawer.Screen
-                name="HomeTabs"
-                component={HomeTabs}
+                name="Home"
+                component={Home}
                 options={{
                     drawerLabel: ({ focused }) => (
                         <View

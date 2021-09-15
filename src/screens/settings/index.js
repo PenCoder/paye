@@ -8,24 +8,18 @@ import {
     TouchableOpacity,
     View,
     FlatList,
+    Switch
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { COLORS, FONTS, icons, SIZES, images } from '../../constants';
-import { ListItem } from '../../components';
+import { ListItem, Radio, Divider } from '../../components';
 // import styles from './styles';
 
-const accounts = [
-    { name: 'GT Bank', type: 'Bank Account', icon: 'bank' },
-    { name: 'Vodafone Cash', type: 'Mobile Wallet', icon: 'mobile' },
-    { name: 'MTN MoMo', type: 'Mobile Wallet', icon: 'mobile' },
-    { name: 'Visa', type: 'Credit Card', icon: 'credit_card' },
-    { name: 'GCB', type: 'Bank Account', icon: 'bank' }
-]
 
 const Settings = ({ navigation }) => {
 
     // State Hooks
-    const [phone, setPhone] = useState('');
+    const [selectedTheme, setSelectedTheme] = useState('');
 
     function renderHeader() {
         return (
@@ -52,7 +46,7 @@ const Settings = ({ navigation }) => {
     }
     function renderDetails() {
         return (
-            <View style={{ marginTop: SIZES.padding * 3 }}>
+            <View style={{ marginTop: SIZES.padding * 3, margin: SIZES.padding * 2 }}>
 
                 <View
                     style={{ margin: SIZES.padding * 2 }}
@@ -61,36 +55,25 @@ const Settings = ({ navigation }) => {
                 </View>
                 <View
                     style={{
-                        flexDirection: 'row',
-                        alignItems: 'center'
+                        margin: SIZES.padding
                     }}
                 >
-                    <View
-                        style={{
-                            backgroundColor: COLORS.bg_gd_top,
-                            borderRadius: 30,
-                            width: 50,
-                            height: 50,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            margin: SIZES.padding * 2
-                        }}
-                    >
-                        <Image
-                            source={icons.user}
-                            style={{
-                                height: '40%',
-                                width: '40%',
-                                tintColor: COLORS.logo_tint
-                            }}
-                        />
-                    </View>
-                    <View>
-                        <Text style={{ color: COLORS.text_pri, ...FONTS.h4 }}>Kofi Appau</Text>
-                        <Text style={{ color: COLORS.text_sec, ...FONTS.body5 }}>ACCOUNT NAME</Text>
-                    </View>
-                </View>
 
+                    <Radio
+                        label="LIGHT THEME"
+                        value="light"
+                        selected={selectedTheme}
+                        onChanged={setSelectedTheme}
+                    />
+
+                    <Radio
+                        label="DARK THEME"
+                        value="dark"
+                        selected={selectedTheme}
+                        onChanged={setSelectedTheme}
+                    />
+                </View>
+                <Divider />
                 <View
                     style={{
                         flexDirection: 'row',

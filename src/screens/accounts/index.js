@@ -124,6 +124,7 @@ const Accounts = ({ navigation }) => {
                         <Text style={{ color: COLORS.text_pri, ...FONTS.body4 }}>+ Add Account</Text>
                     </TouchableOpacity>
                 </View>
+
             </View>
         )
     }
@@ -139,6 +140,51 @@ const Accounts = ({ navigation }) => {
                     onPress={() => navigation.navigate('Categories')}
                 >
                     <Text style={{ color: COLORS.text_pri, ...FONTS.h3 }}>GO</Text>
+                </TouchableOpacity>
+            </View>
+        )
+    }
+
+    function renderFilterTab() {
+        return (
+            <View
+                style={{
+                    flexDirection: 'row',
+                    paddingTop: SIZES.padding * 3,
+                }}
+            >
+                <TouchableOpacity
+                    style={{
+                        height: 30,
+                        padding: SIZES.padding,
+                        backgroundColor: COLORS.bg_gd_top
+                    }}
+                >
+                    <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>BANK</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{
+                        height: 30,
+                        padding: SIZES.padding,
+                        backgroundColor: COLORS.bg_gd_top
+                    }}
+                >
+                    <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>M. WALLET</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{
+                        height: 30,
+                        padding: SIZES.padding,
+                        backgroundColor: COLORS.bg_gd_top
+                    }}
+                >
+                    <View
+                        style={{
+
+                        }}
+                    >
+                        <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>CARD</Text>
+                    </View>
                 </TouchableOpacity>
             </View>
         )
@@ -163,11 +209,17 @@ const Accounts = ({ navigation }) => {
                 {renderHeader()}
                 <FlatList
                     data={accounts}
+                    keyExtractor={(item, index) => index.toString()}
                     renderItem={renderItem}
                     stle={{
                         marginHorizontal: COLORS.padding
                     }}
-                    ListHeaderComponent={renderListHeader}
+                    ListHeaderComponent={
+                        <View>
+                            {renderListHeader()}
+                            {renderFilterTab()}
+                        </View>
+                    }
                     style={{
                         // marginHorizontal: SIZES.padding,
                         marginTop: SIZES.padding * 3,

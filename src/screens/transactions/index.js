@@ -15,11 +15,11 @@ import { ListItem } from '../../components';
 import styles from './styles';
 
 const transactions = [
-    { amount: 200, date: '2021-05-02 9:30:03', icon: 'send' },
-    { amount: 500, date: '2021-07-02 12:12:20', icon: 'send' },
-    { amount: 150, date: '2021-07-04 8:00:10', icon: 'send' },
-    { amount: 4000, date: '2021-07-08 11:12:12', icon: 'send' },
-    { amount: 2100, date: '2021-08-02 02:09:00', icon: 'send' },
+    { account: "234374889", amount: 200, date: '2021-05-02 9:30:03', icon: 'send' },
+    { account: "768653463", amount: 500, date: '2021-07-02 12:12:20', icon: 'send' },
+    { account: "786901234", amount: 150, date: '2021-07-04 8:00:10', icon: 'send' },
+    { account: "800906540", amount: 4000, date: '2021-07-08 11:12:12', icon: 'send' },
+    { account: "645000210", amount: 2100, date: '2021-08-02 02:09:00', icon: 'send' },
 ]
 
 const Transactions = ({ navigation }) => {
@@ -71,30 +71,36 @@ const Transactions = ({ navigation }) => {
                     borderColor: COLORS.border_color,
                     margin: SIZES.padding * 0.5,
                 }}
+                onPress={() => navigation.navigate('Transaction', { transation: item })}
             >
-                <View
-                    style={{
-                        backgroundColor: COLORS.bg_gd_top,
-                        borderRadius: 30,
-                        width: 50,
-                        height: 50,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        margin: SIZES.padding * 2
-                    }}
-                >
-                    <Image
-                        source={icons[item.icon]}
+                <View style={{ width: '15%' }}>
+                    <View
                         style={{
-                            height: '40%',
-                            width: '40%',
-                            tintColor: COLORS.logo_tint
+                            backgroundColor: COLORS.bg_gd_top,
+                            borderRadius: 30,
+                            width: 40,
+                            height: 40,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            margin: SIZES.padding
                         }}
-                    />
+                    >
+                        <Image
+                            source={icons[item.icon]}
+                            style={{
+                                height: '40%',
+                                width: '40%',
+                                tintColor: COLORS.logo_tint
+                            }}
+                        />
+                    </View>
                 </View>
-                <View>
-                    <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>₵ {item.amount.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })}</Text>
+                <View style={{ margin: SIZES.padding, width: '55%' }}>
+                    <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>{item.account}</Text>
                     <Text style={{ color: COLORS.text_sec, ...FONTS.body4 }}>{item.date}</Text>
+                </View>
+                <View style={{ margin: SIZES.padding, width: '30%' }}>
+                    <Text style={{ color: COLORS.text_pri, ...FONTS.body2 }}>₵ {item.amount.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' })}</Text>
                 </View>
             </TouchableOpacity>
         )

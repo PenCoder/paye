@@ -1,6 +1,6 @@
-import * as firebase from 'firebase';
-import '@firebase/auth';
-import "@firebase/firestore";
+// import * as firebase from 'firebase';
+// import '@firebase/auth';
+// import "@firebase/firestore";
 import {
     FIREBASE_API_KEY,
     FIREBASE_DB_URI,
@@ -23,8 +23,8 @@ const config = {
     measurementId: FIREBASE_MEASUREMENT_ID
 }
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(config);
-}
+// if (!firebase.apps.length) {
+//     firebase.initializeApp(config);
+// }
 
-export { firebase };
+// export { firebase };

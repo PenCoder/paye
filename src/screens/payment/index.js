@@ -52,13 +52,13 @@ const Paymment = ({ navigation }) => {
                     marginHorizontal: SIZES.padding * 6
                 }}
             >
-                <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>AMOUNT</Text>
+                {/* <Text style={{ color: COLORS.text_pri, ...FONTS.body3 }}>AMOUNT</Text> */}
                 <TextInput
                     style={{
                         textAlign: 'center',
                         ...styles.formInput,
                     }}
-                    placeholder="ENTER AMOUNT"
+                    placeholder="AMOUNT"
                     placeholderTextColor={COLORS.text_pri}
                     keyboardType='numeric'
                     value={amount}
