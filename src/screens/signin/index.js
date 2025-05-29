@@ -137,7 +137,6 @@ const SignIn = ({ navigation }) => {
                             onChangeText={setEmail}
                             value={email}
                             validate={validate}
-                            onChangeText={setEmail}
                         />
                     </View>
                 </View>
@@ -315,10 +314,10 @@ const SignIn = ({ navigation }) => {
         >
             <LinearGradient
                 colors={[COLORS.bg_gd_top, COLORS.bg_gd_down]}
-                style={{ flex: 1, }}
+                style={{ flex: 1, paddingTop: SIZES.padding * 7}}
             >
                 <ScrollView keyboardShouldPersistTaps="handled">
-                    {renderHeader()}
+                    {/* {renderHeader()} */}
                     {renderLogo()}
                     {renderForm()}
                     {renderButton()}

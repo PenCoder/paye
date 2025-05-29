@@ -45,7 +45,7 @@ const Authenticate = ({ navigation }) => {
                 }
             })
             .catch(error => {
-                alert(JSON.stringify(error));
+                console.log(JSON.stringify(error));
             })
     }, [])
     /*
@@ -159,7 +159,7 @@ const Authenticate = ({ navigation }) => {
                             margin: SIZES.padding * 2
                         }}
                     />
-                    <Text style={{ color: COLORS.text_sec, ...FONTS.h2 }}>GO TO PIN INPUT</Text>
+                    <Text style={{ color: COLORS.text_sec, ...FONTS.h2 }}>ENTER PIN</Text>
                 </TouchableOpacity>
             </View>
         )
