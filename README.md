@@ -1,42 +1,54 @@
-# Paye
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/PenCoder/paye/main/assets/images/payeLogo.png" alt="Paye Logo" width="100" />
+  <br>
+  Paye
+</h1>
 
-**Digital Payment App**
+<p align="center">
+  <b>Digital Payment App</b><br>
+  <sub>
+    <img src="https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue" alt="Platforms" />
+    <img src="https://img.shields.io/github/languages/top/PenCoder/paye" alt="Top Language" />
+    <img src="https://img.shields.io/github/license/PenCoder/paye" alt="License" />
+  </sub>
+</p>
 
 ---
 
-## Table of Contents
+## 📖 Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Getting Started](#getting-started)
-- [Authentication](#authentication)
-- [Biometric Security](#biometric-security)
-- [Project Structure](#project-structure)
-- [Scripts](#scripts)
-- [Contributing](#contributing)
-- [License](#license)
+- [✨ Features](#features)
+- [🛠 Tech Stack](#tech-stack)
+- [🚀 Getting Started](#getting-started)
+- [🔐 Authentication](#authentication)
+- [🔏 Biometric Security](#biometric-security)
+- [📁 Project Structure](#project-structure)
+- [📜 Scripts](#scripts)
+- [🤝 Contributing](#contributing)
+- [📝 License](#license)
+- [🙏 Acknowledgements](#acknowledgements)
 
 ---
 
-## Overview
+## 🧾 Overview
 
 **Paye** is a digital payment application built with React Native, designed to provide seamless, secure, and intuitive mobile payments. It supports modern authentication flows, biometric security, and real-time financial operations.
 
 ---
 
-## Features
+## ✨ Features
 
-- User registration and login with Firebase Authentication
-- Biometric authentication (Face ID, Touch ID, Fingerprint)
-- Secure PIN management
-- Seamless payments and transfers
-- Transaction history
-- Modern, responsive UI
+- 🔐 User registration and login with Firebase Authentication
+- 👆 Biometric authentication (Face ID, Touch ID, Fingerprint)
+- 🛡️ Secure PIN management
+- 💸 Seamless payments and transfers
+- 📜 Transaction history
+- 🎨 Modern, responsive UI
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - **Frontend:** React Native (JavaScript)
 - **Navigation:** React Navigation
@@ -48,15 +60,15 @@
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### 🧰 Prerequisites
 
 - **Node.js** >= 18
 - **Yarn** or **npm**
 - **Android Studio** or **Xcode** (for running on emulators or physical devices)
 
-### Installation
+### 🛠 Installation
 
 1. **Clone the repository**
    ```sh
@@ -86,30 +98,31 @@
      cp .env.example .env
      ```
 
-### Running the App
+### ▶️ Running the App
 
-- For Android:
+- **Android:**
   ```sh
   yarn android
   ```
-- For iOS:
+- **iOS:**
   ```sh
   yarn ios
   ```
-- For web (if supported):
+- **Web (if supported):**
   ```sh
   yarn web
   ```
 
 ---
 
-## Authentication
+## 🔐 Authentication
 
-Authentication is handled through Firebase Auth. Users can sign up and log in using email and password. For seed users, you can add accounts via the Firebase Console under **Authentication > Users > Add User**.
+Authentication is handled through Firebase Auth. Users can sign up and log in using email and password.  
+For seed users, you can add accounts via the Firebase Console under **Authentication > Users > Add User**.
 
 ---
 
-## Biometric Security
+## 🔏 Biometric Security
 
 This app uses [`react-native-biometrics`](https://github.com/SelfLender/react-native-biometrics) and [`react-native-keychain`](https://github.com/oblador/react-native-keychain) for biometric authentication and secure credential storage.
 
@@ -117,16 +130,16 @@ This app uses [`react-native-biometrics`](https://github.com/SelfLender/react-na
 - On app launch, if biometrics are enabled, users are prompted for biometric authentication.
 - Credentials are stored securely and accessed only after successful biometric validation.
 
-**Permissions:**
+### 📄 Permissions
 
 - **Android:** `USE_BIOMETRIC`, `USE_FINGERPRINT`
 - **iOS:** `NSFaceIDUsageDescription` in `Info.plist`
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
-```
+```text
 .
 ├── android/                  # Android native code
 ├── ios/                      # iOS native code
@@ -146,7 +159,7 @@ This app uses [`react-native-biometrics`](https://github.com/SelfLender/react-na
 
 ---
 
-## Scripts
+## 📜 Scripts
 
 From `package.json`:
 
@@ -158,7 +171,7 @@ From `package.json`:
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please:
 
@@ -172,13 +185,13 @@ Please follow the code style and add tests where appropriate.
 
 ---
 
-## License
+## 📝 License
 
 Distributed under the MIT License.
 
 ---
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
 - [React Native](https://reactnative.dev/)
 - [Firebase](https://firebase.google.com/)
@@ -187,3 +200,9 @@ Distributed under the MIT License.
 - And all open-source contributors
 
 ---
+
+<p align="center">
+  <img src="https://img.icons8.com/color/96/000000/fingerprint-scan.png" width="60"/>
+  <br>
+  <i>Secure. Fast. Modern. Paye.</i>
+</p>
