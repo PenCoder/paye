@@ -1,131 +1,74 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import 'react-native-gesture-handler';
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+
+
+// Screens
 import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+    SignUp,
+    Scan,
+    Categories,
+    Payment,
+    SignIn,
+    AccountForm,
+    Account,
+    Accounts,
+    Transaction,
+    Authenticate,
+    PINAuth,
+} from './src/screens';
+import HomeDrawer from './src/navigation/homedrawer';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+// Custom Theme
+const theme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        border: 'transparent',
+    },
+};
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+// Stack Object
+const Stack = createStackNavigator();
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  /*
-   * To keep the template simple and small we're adding padding to prevent view
-   * from rendering under the System UI.
-   * For bigger apps the recommendation is to use `react-native-safe-area-context`:
-   * https://github.com/AppAndFlow/react-native-safe-area-context
-   *
-   * You can read more about it here:
-   * https://github.com/react-native-community/discussions-and-proposals/discussions/827
-   */
-  const safePadding = '5%';
-
-  return (
-    <View style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        style={backgroundStyle}>
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
-        </View>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            paddingHorizontal: safePadding,
-            paddingBottom: safePadding,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </View>
-  );
+    return (
+        <NavigationContainer theme={theme}>
+            <Stack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}
+            >
+                {/* To Sign In Screen */}
+                <Stack.Screen name="SignIn" component={SignIn} />
+                {/* To Authentication Screen */}
+                <Stack.Screen name="Authenticate" component={Authenticate} />
+                {/* To Sign Up Screen */}
+                <Stack.Screen name="SignUp" component={SignUp} />
+                {/* To Home Screen */}
+                <Stack.Screen name="Main" component={HomeDrawer} />
+                {/* To Scan Screen */}
+                <Stack.Screen name="Scan" component={Scan} />
+                {/* To Accessories Screen */}
+                <Stack.Screen name="Categories" component={Categories} />
+                {/* To Payment Screen */}
+                <Stack.Screen name="Payment" component={Payment} />
+                {/* To Accounts Screen */}
+                <Stack.Screen name="Accounts" component={Accounts} />
+                {/* To Account Screen */}
+                <Stack.Screen name="Account" component={Account} />
+                {/* To Account Form Screen */}
+                <Stack.Screen name="AccountForm" component={AccountForm} />
+                {/* To Transactions Screen */}
+                <Stack.Screen name="Transaction" component={Transaction} />
+                {/* To PIN Code Screen */}
+                <Stack.Screen name="PINAuth" component={PINAuth} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
