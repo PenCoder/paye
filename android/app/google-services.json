@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "182397632569",
+    "firebase_url": "https://paye-app-default-rtdb.firebaseio.com",
+    "project_id": "paye-app",
+    "storage_bucket": "paye-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182397632569:android:180184778e6a958ce98de8",
+        "android_client_info": {
+          "package_name": "com.paye"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWNR9U8Fw4dsY51zt8AepAkCsa80S3GgA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
