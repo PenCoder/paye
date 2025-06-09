@@ -1,97 +1,208 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/PenCoder/paye/main/assets/images/payeLogo.png" alt="Paye Logo" width="100" />
+  <br>
+  Paye
+</h1>
 
-# Getting Started
+<p align="center">
+  <b>Digital Payment App</b><br>
+  <sub>
+    <img src="https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue" alt="Platforms" />
+    <img src="https://img.shields.io/github/languages/top/PenCoder/paye" alt="Top Language" />
+    <img src="https://img.shields.io/github/license/PenCoder/paye" alt="License" />
+  </sub>
+</p>
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+---
 
-## Step 1: Start Metro
+## 📖 Table of Contents
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- [Overview](#overview)
+- [✨ Features](#features)
+- [🛠 Tech Stack](#tech-stack)
+- [🚀 Getting Started](#getting-started)
+- [🔐 Authentication](#authentication)
+- [🔏 Biometric Security](#biometric-security)
+- [📁 Project Structure](#project-structure)
+- [📜 Scripts](#scripts)
+- [🤝 Contributing](#contributing)
+- [📝 License](#license)
+- [🙏 Acknowledgements](#acknowledgements)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
-# Using npm
-npm start
+## 🧾 Overview
 
-# OR using Yarn
-yarn start
+**Paye** is a digital payment application built with React Native, designed to provide seamless, secure, and intuitive mobile payments. It supports modern authentication flows, biometric security, and real-time financial operations.
+
+---
+
+## ✨ Features
+
+- 🔐 User registration and login with Firebase Authentication
+- 👆 Biometric authentication (Face ID, Touch ID, Fingerprint)
+- 🛡️ Secure PIN management
+- 💸 Seamless payments and transfers
+- 📜 Transaction history
+- 🎨 Modern, responsive UI
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React Native (JavaScript)
+- **Navigation:** React Navigation
+- **Secure Storage:** react-native-keychain, AsyncStorage
+- **Biometric Auth:** react-native-biometrics
+- **Authentication:** Firebase Auth
+- **UI Enhancements:** react-native-linear-gradient, custom components
+- **Testing:** Jest
+
+---
+
+## 🚀 Getting Started
+
+### 🧰 Prerequisites
+
+- **Node.js** >= 18
+- **Yarn** or **npm**
+- **Android Studio** or **Xcode** (for running on emulators or physical devices)
+
+### 🛠 Installation
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/PenCoder/paye.git
+   cd paye
+   ```
+
+2. **Install dependencies**
+   ```sh
+   yarn install
+   # or
+   npm install
+   ```
+
+3. **Install pods for iOS**
+   ```sh
+   npx pod-install
+   ```
+
+4. **Configure Firebase**
+   - Set up a Firebase project in the [Firebase Console](https://console.firebase.google.com/).
+   - Download your `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) files and place them in the appropriate directories.
+
+5. **Set up environment variables**
+   - If the project uses environment files (e.g., `.env`), copy and configure as needed:
+     ```sh
+     cp .env.example .env
+     ```
+
+### ▶️ Running the App
+
+- **Android:**
+  ```sh
+  yarn android
+  ```
+- **iOS:**
+  ```sh
+  yarn ios
+  ```
+- **Web (if supported):**
+  ```sh
+  yarn web
+  ```
+
+---
+
+## 🔐 Authentication
+
+Authentication is handled through Firebase Auth. Users can sign up and log in using email and password.  
+For seed users, you can add accounts via the Firebase Console under **Authentication > Users > Add User**.
+
+---
+
+## 🔏 Biometric Security
+
+This app uses [`react-native-biometrics`](https://github.com/SelfLender/react-native-biometrics) and [`react-native-keychain`](https://github.com/oblador/react-native-keychain) for biometric authentication and secure credential storage.
+
+- Users can enable biometric sign-in after their first login.
+- On app launch, if biometrics are enabled, users are prompted for biometric authentication.
+- Credentials are stored securely and accessed only after successful biometric validation.
+
+### 📄 Permissions
+
+- **Android:** `USE_BIOMETRIC`, `USE_FINGERPRINT`
+- **iOS:** `NSFaceIDUsageDescription` in `Info.plist`
+
+---
+
+## 📁 Project Structure
+
+```text
+.
+├── android/                  # Android native code
+├── ios/                      # iOS native code
+├── src/
+│   ├── components/           # Reusable React Native components
+│   ├── constants/            # Colors, fonts, images, icons
+│   ├── helpers/              # Utility functions (e.g., input validation)
+│   ├── navigation/           # React Navigation setup
+│   ├── screens/              # App screens (Authentication, Main, etc.)
+│   ├── hooks/                # Custom React hooks
+│   └── ...                   # Additional modules
+├── .env.example              # Example environment config
+├── App.js                    # App entry point
+├── package.json
+└── README.md
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 📜 Scripts
 
-### Android
+From `package.json`:
 
-```sh
-# Using npm
-npm run android
+- `yarn android` — Run app on Android
+- `yarn ios` — Run app on iOS
+- `yarn lint` — Lint JavaScript files
+- `yarn start` — Start Metro bundler
+- `yarn test` — Run tests with Jest
 
-# OR using Yarn
-yarn android
-```
+---
 
-### iOS
+## 🤝 Contributing
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Contributions are welcome! Please:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
 
-```sh
-bundle install
-```
+Please follow the code style and add tests where appropriate.
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+## 📝 License
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Distributed under the MIT License.
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
-```
+## 🙏 Acknowledgements
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+- [React Native](https://reactnative.dev/)
+- [Firebase](https://firebase.google.com/)
+- [React Native Biometrics](https://github.com/SelfLender/react-native-biometrics)
+- [React Native Keychain](https://github.com/oblador/react-native-keychain)
+- And all open-source contributors
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
 
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+<p align="center">
+  <img src="https://img.icons8.com/color/96/000000/fingerprint-scan.png" width="60"/>
+  <br>
+  <i>Secure. Fast. Modern. Paye.</i>
+</p>
